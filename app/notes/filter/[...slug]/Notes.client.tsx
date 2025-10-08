@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import css from "./page.module.css";
 import NoteList from "@/components/NoteList/NoteList";
 import { Pagination } from "@/components/Pagination/Pagination";
-import { Modal } from "@/components/Modal/Modal";
+import Modal from "@/components/Modal/Modal";
 import { NoteForm } from "@/components/NoteForm/NoteForm";
 import { useDebounce } from "use-debounce";
 import SearchBox from "@/components/SearchBox/SearchBox";
