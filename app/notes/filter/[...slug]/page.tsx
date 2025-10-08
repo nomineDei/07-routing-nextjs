@@ -9,7 +9,7 @@ import NotesClient from "./Notes.client";
 export const dynamic = "force-dynamic";
 
 interface NotePageProps {
-  params: { slug?: string[] };
+  params: Promise<{ slug?: string[] }>;
 }
 
 const allowedTags = [
@@ -22,13 +22,14 @@ const allowedTags = [
 type AllowedTag = (typeof allowedTags)[number];
 
 export default async function NotesPage({ params }: NotePageProps) {
+  const { slug } = await params;
   const queryClient = new QueryClient();
 
   const page = 1;
   const perPage = 12;
   const search = "";
 
-  const rawTag = params.slug?.[0];
+  const rawTag = slug?.[0];
   const tag = allowedTags.includes(rawTag as AllowedTag)
     ? (rawTag as AllowedTag)
     : undefined;

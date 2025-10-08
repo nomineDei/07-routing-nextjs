@@ -34,7 +34,6 @@ export async function fetchNotes(
   params: FetchNotesParams
 ): Promise<NotesResponse> {
   const res = await api.get<NotesResponse>("/notes", { params });
-  console.log(res.data);
 
   return res.data;
 }

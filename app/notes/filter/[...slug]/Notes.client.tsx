@@ -30,10 +30,6 @@ export default function NotesClient({
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    console.log("🔖 Active tag:", tag);
-  }, [tag]);
-
   const handleSearchChange = (value: string) => {
     setSearch(value);
     setPage(1);
