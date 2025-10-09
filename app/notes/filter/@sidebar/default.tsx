@@ -3,12 +3,12 @@ import css from "./SideBar.module.css";
 import Link from "next/link";
 
 const tags = [
-  "All Notes",
+  "All",
+  "Todo",
   "Work",
   "Personal",
   "Meeting",
   "Shopping",
-  "Todo",
 ] as const;
 
 const Sidebar = async () => {
@@ -16,7 +16,7 @@ const Sidebar = async () => {
     <ul className={css.menuList}>
       {tags.map((tag) => (
         <li className={css.menuItem} key={tag}>
-          {tag === "All Notes" ? (
+          {tag === "All" ? (
             <Link className={css.menuLink} href="/notes/filter/All">
               {tag}
             </Link>

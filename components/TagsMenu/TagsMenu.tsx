@@ -8,12 +8,12 @@ const TagsMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const tags = [
-    "All Notes",
+    "All",
+    "Todo",
     "Work",
     "Personal",
     "Meeting",
     "Shopping",
-    "Todo",
   ] as const;
 
   return (
@@ -28,7 +28,7 @@ const TagsMenu = () => {
         <ul className={css.menuList}>
           {tags.map((tag) => (
             <li className={css.menuItem} key={tag}>
-              {tag === "All Notes" ? (
+              {tag === "All" ? (
                 <Link
                   className={css.menuLink}
                   href="/notes/filter/All"
